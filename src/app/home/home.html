@@ -1,7 +1,14 @@
 <div class="container" ng-controller="HomeCtrl">
   <div class="jumbotron text-center">
     <h1>Explore some API</h1>
-    <p><a class="btn btn-lg btn-success" ng-click="apiCall('mine')">Mine</a><a class="btn btn-lg btn-success" ng-click="apiCall('recent')">Recent</a><a class="btn btn-lg btn-success" ng-click="apiCall('friends')">Friends</a></p>
+    <div class="row">
+    <a class="btn btn-lg btn-success" ng-click="apiCall('mine')">Mine</a><a class="btn btn-lg btn-success" ng-click="apiCall('recent')">Recent</a><a class="btn btn-lg btn-success" ng-click="apiCall('friends')">Friends</a>
+    </div>
+    <div class="row">
+        <input type="text" id="sourceKey" ng-model="sourceKey" class="form-control" placeholder="Source Key">
+        <input type="text" id="collectionKey" ng-model="collectionKey" class="form-control" placeholder="Collection Key">
+        <button class="btn btn-lg btn-success" ng-click="apiCall('sources')">Sources</button>
+    </div>
   </div>
 
   <div class="row">

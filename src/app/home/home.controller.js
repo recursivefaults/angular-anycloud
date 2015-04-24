@@ -19,8 +19,16 @@ angular.module('mobilePrototype')
 			withCredentials: true,
 			headers: {'Content-Type': 'application/json'}
 		},
+        source: {
+            url: 'http://localhost:8080/sources/:source/collections/:collection/entries?format=json',
+			withCredentials: true,
+			headers: {'Content-Type': 'application/json'}
+
+        }
 	});
     $scope.items = [];
+    $scope.sourceKey = "";
+    $scope.collectionKey = "";
     $scope.apiCall = function(callName) {
 		if(callName === 'recent') {
 			ApiResource.recent({}, function(data, error) {
@@ -35,8 +43,11 @@ angular.module('mobilePrototype')
 			ApiResource.friends({}, function(data, error) {
 				$scope.items = JSON.stringify(data, null, "  ");
 			});
-			
-		}
+		} else if (callName === 'sources') {
+            ApiResource.source({source: $scope.sourceKey, collection: $scope.collectionKey}, function(data, error) {
+                $scope.items = JSON.stringify(data, null, "  ");
+            });
+        }
 
     };
 }]);
