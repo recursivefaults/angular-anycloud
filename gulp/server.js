@@ -32,6 +32,7 @@ module.exports = function(options) {
     browserSync.instance = browserSync.init({
       startPath: '/',
       server: server,
+      port: 8080,
       browser: browser
     });
   }

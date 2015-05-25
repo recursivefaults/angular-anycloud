@@ -1,14 +1,15 @@
 'use strict';
 
 angular.module('mobilePrototype')
-  .controller('MainCtrl', ['$scope', '$resource', function ($scope, $resource) {
+  .controller('MainCtrl', ['$scope', '$resource', '$rootScope', function ($scope, $resource, $rootScope) {
     $scope.performAuth = function(authType) {
-        
+
         var AuthenticationResrouce = $resource('http://localhost:8080/oauth/' + authType + '/start');
         AuthenticationResrouce.get(function(data, error) {
             console.log(data);
         });
     };
+
     $scope.awesomeThings = [
       {
         'title': 'AngularJS',

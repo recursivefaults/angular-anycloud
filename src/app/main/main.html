@@ -8,6 +8,17 @@
       <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
       Always a pleasure scaffolding your apps.
     </p>
+  <input type="text" ng-model="token">
+  <a href="/#/home" class="btn btn-primary">Use the token!</a>
+  <oauth
+    site="https://accounts.google.com"
+    client-id="600374990212.apps.googleusercontent.com"
+    redirect-uri="http://localhost:8080/oauth/g/redirect"
+    authorize-path= "/o/oauth2/auth"
+    text="GOOGLE+"
+    profile-uri=""
+    scope="https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fpicasaweb.google.com%2Fdata%2F"
+  ></oauth>
 	<p><a class="btn btn-primary" href="http://localhost:8080/oauth/g/start?redirect=http://localhost:3000/#/home">Google +</a></p>
   </div>
   </div>
